@@ -1,5 +1,5 @@
-﻿Import-Module '\\Powershell\Logging\LogThis.ps1'
-Import-Module '\\\Powershell\Logging\logPurge.ps1'
+Import-Module '\\Powershell\Logging\LogThis.ps1'
+Import-Module '\\Powershell\Logging\logPurge.ps1'
 Import-Module '\\Powershell\Pass Encryption\SecureThis.ps1'
 Import-Module '\\Powershell\SQL\SQL interface.ps1'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
