@@ -1,0 +1,7 @@
+EXEC usp_InsertLetterRecord
+	@StudentId = #STUDENT_ID#
+	, @SchoolId = #SCHOOL_ID#
+	, @Grade = #STUDENT_GRADE#
+	, @LetterDate = #LETTER_DATE#
+	, @LetterType = '#INTERVENTION_TYPE#'
+	, @Comment = '#COMMENT#';

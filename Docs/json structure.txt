@@ -1,0 +1,61 @@
+both
+	log
+		execution_id -- for logging
+		access -- to confirm call succeeded (GRANTED or DENIED)
+		user_id -- a2a account id making calls
+		district
+		date
+		api
+		type
+		execution_time
+		secure
+	api
+		navigation
+				<letter/conference>_type	-- just reiterates type from LOG entry
+				total_records -- valueable; helps indicate total number of pages
+				records_returned -- semi-valueable; compare to page_size to determine if more pages
+				page
+				page_size
+letter_api
+	summary
+		letter_<type>_count -- use to identify additional calls to make
+	all/to_be_printed/pre_loaded/suppressed
+		letter_api
+			letters{} -- hashtable
+				letter -- 
+					id -- a2a_letter_id
+					letter
+					site
+					letter_date
+					created_date
+					modified_date
+					status
+					student{}
+						student
+							student_id -- a2a_student_id
+							last_name -- stu.ln
+							first_name -- stu.fn
+							grade -- stu.gr
+							site -- stu.sc
+							student_code -- stu.id
+							notes{}	-- consider multiple notes using .count
+								id -- a2a note id
+								text -- note
+								created_date
+								created_by -- user email
+								modified_date
+								modified_by
+conference_api
+	summary
+		conference_<type>_count
+		my_conference_count(s) -- not needed
+	all others
+		id - a2a_conf_id
+		num_students
+		closed -- boolean
+		students{} 
+			student -- contains same fields as letters' students, with 3 additional values
+				conference_student_id
+				conference_status
+				letter_code -- letter type (e.g. L1, L2, L3)
+		staff{}
